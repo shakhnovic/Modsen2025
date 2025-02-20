@@ -1,0 +1,14 @@
+"use strict";
+
+function isObjectSubset(obj1, obj2) {
+  if (typeof obj1 !== "object" || typeof obj2 !== "object" || obj1 === null || obj2 === null) {
+    throw new Error("Оба аргумента должны быть объектами.");
+  }
+
+  for (let key in obj2) {
+    if (!obj1.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+  return true;
+}

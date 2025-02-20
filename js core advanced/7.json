@@ -1,0 +1,16 @@
+"use strict";
+
+function checkInteger(num) {
+  if (!Number.isInteger(num)) {
+    throw new Error("Ошибка: Введенное значение не является целым числом!");
+  }
+  console.log(`Число ${num} является целым.`);
+}
+
+
+try {
+  checkInteger(10);  
+  checkInteger(3.14); 
+} catch (error) {
+  console.error(error.message);
+}

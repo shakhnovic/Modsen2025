@@ -1,0 +1,14 @@
+"use strict";
+
+function increaseByTenPercent(arr) {
+  if (!Array.isArray(arr)) {
+    throw new Error("Аргумент должен быть массивом.");
+  }
+
+  return arr.map(num => {
+    if (typeof num !== "number") {
+      throw new Error("Все элементы массива должны быть числами.");
+    }
+    return num * 1.1; 
+  });
+}

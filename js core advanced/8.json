@@ -1,0 +1,20 @@
+"use strict";
+
+function asyncOperation(message, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(message);
+      resolve(message);
+    }, delay);
+  });
+}
+
+function runSequentially() {
+  asyncOperation("Шаг 1: Запуск", 1000)
+    .then(() => asyncOperation("Шаг 2: Выполнение", 2000))
+    .then(() => asyncOperation("Шаг 3: Завершение", 1500))
+    .then(() => console.log("Все операции выполнены!"))
+    .catch((error) => console.error("Произошла ошибка:", error));
+}
+
+runSequentially();

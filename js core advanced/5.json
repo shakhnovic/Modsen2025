@@ -1,0 +1,22 @@
+"use strict";
+
+function repeatOperation(callback, interval, times) {
+  if (typeof callback !== "function") {
+    throw new Error("Первый аргумент должен быть функцией.");
+  }
+  if (typeof interval !== "number" || interval <= 0) {
+    throw new Error("Интервал должен быть положительным числом.");
+  }
+  if (typeof times !== "number" || times <= 0) {
+    throw new Error("Количество повторений должно быть положительным числом.");
+  }
+
+  let count = 0;
+  const intervalId = setInterval(() => {
+    callback();
+    count++;
+    if (count >= times) {
+      clearInterval(intervalId); 
+    }
+  }, interval);
+}

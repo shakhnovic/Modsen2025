@@ -1,0 +1,31 @@
+"use strict";
+
+function testScope() {
+  if (true) {
+    var xVar = "Я объявлен через var";
+    let xLet = "Я объявлен через let";
+    const xConst = "Я объявлен через const";
+
+    console.log("Внутри блока:");
+    console.log(xVar);   
+    console.log(xLet);   
+    console.log(xConst); 
+  }
+
+  console.log("Вне блока:");
+  console.log(xVar);   
+  
+  try {
+    console.log(xLet);   
+  } catch (error) {
+    console.log("Ошибка: xLet недоступен за пределами блока");
+  }
+
+  try {
+    console.log(xConst); 
+  } catch (error) {
+    console.log("Ошибка: xConst недоступен за пределами блока");
+  }
+}
+
+testScope();
