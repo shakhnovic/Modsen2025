@@ -1,0 +1,8 @@
+{
+    "name": "my-yarn-app",
+    "version": "1.0.0",
+    "description": "Простое приложение с Koa и Yarn Workspaces",
+    "author": "Ваше Имя (или email@example.com)",
+    "license": "MIT",
+    "private": true
+  }
